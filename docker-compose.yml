@@ -1,0 +1,82 @@
+# QueueApp — development environment
+#
+# Tiga service:
+# mysql → database
+# server → API
+# web → client browser
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: queueapp-mysql
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+
+    ports:
+      - "${DB_HOST_PORT}:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+    networks:
+      - queueapp
+
+  server:
+    image: node:20-alpine
+    container_name: queueapp-server
+    restart: unless-stopped
+
+    working_dir: /app
+
+    command: node placeholder.js
+
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      PORT: 3000
+      DB_HOST: ${DB_HOST}
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+
+    ports:
+      - "${SERVER_PORT}:3000"
+
+    volumes:
+      - ./server:/app
+
+    depends_on:
+      - mysql
+
+    networks:
+      - queueapp
+
+  web:
+    image: nginx:alpine
+    container_name: queueapp-web
+    restart: unless-stopped
+
+    ports:
+      - "${WEB_PORT}:80"
+
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
+
+    depends_on:
+      - server
+
+    networks:
+      - queueapp
+
+volumes:
+  mysql_data:
+
+networks:
+  queueapp:
+    driver: bridge

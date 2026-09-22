@@ -2,19 +2,24 @@
 .env
 .env.local
 .env.*.local
+
 # Dependencies
 node_modules/
+
 # Build output
 dist/
 build/
 .expo/
+
 # Log
 *.log
 npm-debug.log*
 logs/
+
 # OS
 .DS_Store
 Thumbs.db
+
 # Editor
 .vscode/
 .idea/
