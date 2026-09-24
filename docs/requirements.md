@@ -29,7 +29,7 @@ User persona customer: 1. Menggunakan layanan antrean, 2. Mengambil nomor antrea
 12.	Admin dapat menambah, mengubah, dan menghapus daftar layanan.
 13.	Admin dapat memanggil nomor antrean.
 14.	Admin dapat mengubah status antrean.
-15.	## 🔗Non functional
+## 🔗Non functional
 1.	Sistem harus dapat merespons permintaan pengguna dengan cepat dan tidak mengalami keterlambatan yang mengganggu.
 2.	Tampilan QueueApp harus sederhana dan mudah dipahami oleh Customer maupun Admin.
 3.	Sistem harus melindungi data akun pengguna dan membatasi akses Admin hanya kepada pengguna yang memiliki hak akses.
