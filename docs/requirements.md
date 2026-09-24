@@ -1,6 +1,6 @@
-## 📖 User persona
+## 🔗User persona
 User persona customer: 1. Menggunakan layanan antrean, 2. Mengambil nomor antrean, 3. Melihat posisi antrean, 4. Menerima notifikasi, 5. Membatalkan antrean.User persona admin: 1. Mengelola layanan antrean, 2. Melihat antrean masuk, 3. Memanggil nomor antrean, 4. Mengubah status antrean, 5. Mengelola daftar layanan.
-## 📖 User story customer
+## 🔗User story customer
 1.	Sebagai Customer, saya ingin melakukan registrasi agar dapat memiliki akun dan menggunakan QueueApp.
 2.	Sebagai Customer, saya ingin login agar dapat mengakses fitur QueueApp.
 3.	Sebagai Customer, saya ingin memilih layanan agar dapat mengambil antrean sesuai kebutuhan saya.
@@ -8,13 +8,13 @@ User persona customer: 1. Menggunakan layanan antrean, 2. Mengambil nomor antrea
 5.	Sebagai Customer, saya ingin melihat status dan posisi antrean agar mengetahui perkembangan antrean saya.
 6.	Sebagai Customer, saya ingin menerima notifikasi agar mengetahui ketika antrean saya mendekati atau tiba pada giliran pelayanan.
 7.	Sebagai Customer, saya ingin membatalkan antrean agar dapat membatalkan antrean ketika saya tidak jadi menggunakan layanan.
-## 📖 User story admin
+## 🔗User story admin
 1.	Sebagai Admin, saya ingin login agar dapat mengakses halaman pengelolaan QueueApp.
 2.	Sebagai Admin, saya ingin melihat semua antrean masuk agar dapat memantau antrean yang sedang berjalan.
 3.	Sebagai Admin, saya ingin mengelola daftar layanan agar jenis layanan yang tersedia dapat disesuaikan dengan kebutuhan.
 4.	Sebagai Admin, saya ingin memanggil nomor antrean agar Customer mengetahui bahwa sudah waktunya mendapatkan pelayanan.
 5.	Sebagai Admin, saya ingin menandai status antrean agar kondisi setiap antrean dapat diketahui dengan jelas.
-## Functional
+## 🔗Functional
 1.	Sistem dapat melakukan registrasi akun Customer.
 2.	Sistem dapat melakukan login Customer menggunakan akun yang terdaftar.
 3.	Sistem dapat melakukan login Admin untuk mengakses halaman admin.
@@ -29,8 +29,8 @@ User persona customer: 1. Menggunakan layanan antrean, 2. Mengambil nomor antrea
 12.	Admin dapat menambah, mengubah, dan menghapus daftar layanan.
 13.	Admin dapat memanggil nomor antrean.
 14.	Admin dapat mengubah status antrean.
-15.	## Non functional
-16.	1.	Sistem harus dapat merespons permintaan pengguna dengan cepat dan tidak mengalami keterlambatan yang mengganggu.
+15.	## 🔗Non functional
+1.	Sistem harus dapat merespons permintaan pengguna dengan cepat dan tidak mengalami keterlambatan yang mengganggu.
 2.	Tampilan QueueApp harus sederhana dan mudah dipahami oleh Customer maupun Admin.
 3.	Sistem harus melindungi data akun pengguna dan membatasi akses Admin hanya kepada pengguna yang memiliki hak akses.
 4.	Sistem harus dapat berjalan secara stabil sehingga data antrean tidak mudah hilang atau berubah secara tidak semestinya.
