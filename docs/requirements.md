@@ -9,3 +9,10 @@
 - Sebagai Customer, saya ingin melihat status dan posisi antrean agar mengetahui perkembangan antrean saya.
 - Sebagai Customer, saya ingin menerima notifikasi agar mengetahui ketika antrean saya mendekati atau tiba pada giliran pelayanan.
 - Sebagai Customer, saya ingin membatalkan antrean agar dapat membatalkan antrean ketika saya tidak jadi menggunakan layanan.
+
+## 📖 User story admin
+# 1.	Sebagai Admin, saya ingin login agar dapat mengakses halaman pengelolaan QueueApp.
+# 2.	Sebagai Admin, saya ingin melihat semua antrean masuk agar dapat memantau antrean yang sedang berjalan.
+# 3.	Sebagai Admin, saya ingin mengelola daftar layanan agar jenis layanan yang tersedia dapat disesuaikan dengan kebutuhan.
+# 4.	Sebagai Admin, saya ingin memanggil nomor antrean agar Customer mengetahui bahwa sudah waktunya mendapatkan pelayanan.
+# 5.	Sebagai Admin, saya ingin menandai status antrean agar kondisi setiap antrean dapat diketahui dengan jelas.
