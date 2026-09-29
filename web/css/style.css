@@ -492,3 +492,84 @@ button {
     }
 }
 
+/* =============================================================================
+9. TATA LETAK RESPONSIVE
+=============================================================================
+Seluruh aturan di atas berlaku untuk layar sempit. Bagian ini hanya
+MENAMBAH aturan untuk layar yang lebih lebar — tidak ada satu pun
+max-width di sini.
+Itulah arti mobile-first: keadaan paling terbatas dianggap keadaan
+dasar, dan layar lapang diperlakukan sebagai kemewahan yang ditambahkan
+belakangan. Membalik urutannya berarti terus-menerus membatalkan aturan
+yang sudah ditulis.
+Titik ubah dipilih dalam em, bukan px, supaya ikut menyesuaikan bila
+pengguna memperbesar ukuran huruf bawaan peramban.
+48em ≈ 768px   tablet
+64em ≈ 1024px  desktop
+========================================================================== */
+
+/* ---- Tablet ke atas ---- */
+@media (min-width: 48em) {
+  /* Token pun boleh disesuaikan per ukuran layar. Satu baris di sini
+     memperbesar seluruh nomor antrean di semua halaman. */
+  :root {
+    --teks-raksasa: 4.5rem;
+  }
+  h1 { font-size: 2rem; }
+  /* Nama situs dan navigasi berdampingan begitu ada ruang. */
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--ruang-3) var(--ruang-5);
+  }
+  header > p {
+    margin-bottom: 0;
+  }
+  main > section,
+  main > form {
+    padding: var(--ruang-5);
+  }
+  /* Daftar definisi berubah dari menurun menjadi dua kolom: istilah di
+     kiri, penjelasan di kanan. */
+  dt {
+    flex-basis: 9rem;
+  }
+  dd {
+    flex-basis: calc(100% - 9rem - var(--ruang-3));
+  }
+}
+
+/* ---- Desktop ke atas ---- */
+@media (min-width: 64em) {
+/* Kartu-kartu disusun berdampingan dan dibiarkan membungkus sendiri.
+flex: 1 1 18rem berarti "boleh melar, boleh menyusut, mulai dari
+18rem" — jumlah kolom per baris ditentukan ruang yang tersedia,
+bukan ditetapkan angkanya. */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--ruang-4);
+}
+/* Anak langsung main yang bukan kartu tetap selebar penuh. */
+main > h1,
+main > p,
+main > form {
+    flex-basis: 100%;
+}
+main > section {
+    flex: 1 1 18rem;
+    margin-top: 0;   /* jarak antar kartu kini diatur gap */
+}
+main > form {
+    margin-top: 0;
+}
+/* Tabel antrean butuh lebar penuh; memaksanya berbagi baris hanya
+membuatnya tergulir tanpa alasan. */
+section[aria-labelledby="judul-daftar"] {
+    flex-basis: 100%;
+    }
+}
+
