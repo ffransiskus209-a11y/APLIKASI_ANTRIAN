@@ -290,3 +290,98 @@ button {
 button:hover {
     background-color: var(--warna-utama-gelap);
 }
+
+/* =============================================================================
+7. DASHBOARD PETUGAS
+========================================================================== */
+/* Tabel lebar tidak boleh mendorong lebar halaman. Pembungkus inilah yang
+digulir, bukan seluruh badan halaman. */
+.tabel-gulir {
+    overflow-x: auto;
+/* Garis fokus perlu ruang agar tidak terpotong saat area digulir
+dengan keyboard. */
+    padding: 2px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+/* Mencegah kolom menyempit sampai isinya terpelintir; bila tidak muat,
+pembungkus di atas yang menggulir. */
+    min-width: 40rem;
+}
+
+th,
+td {
+    padding: var(--ruang-2) var(--ruang-3);
+    text-align: left;
+    border-bottom: 1px solid var(--warna-garis);
+    vertical-align: top;
+}
+thead th {
+    background-color: var(--warna-latar);
+    font-size: var(--teks-kecil);
+    letter-spacing: 0.04em;
+    border-bottom-width: 2px;
+    white-space: nowrap;
+}
+/* Nomor antrean adalah kepala baris — ditandai th scope="row" sejak
+Minggu 03, jadi cukup dipilih lewat penandanya. */
+tbody th[scope="row"] {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+td time {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+/* Status diberi warna lewat selektor atribut, memakai data-status yang
+nilainya sama persis dengan status di model data. Tidak perlu class
+tambahan, dan tidak mungkin meleset dari daftar status yang sah. */
+td[data-status] {
+    font-size: var(--teks-kecil);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+}
+
+td[data-status="WAITING"] { color: #7a4600; }  
+td[data-status="CALLED"]  { color: #0e3465; }    
+td[data-status="COMPLETED"] { color: #14562f; }
+
+/* Warna saja tidak boleh menjadi satu-satunya pembeda — pengguna dengan
+buta warna tidak akan menangkapnya. Karena itu setiap status juga
+diberi penanda bentuk di depannya. */
+
+td[data-status]::before {
+    margin-right: var(--ruang-1);
+}
+
+td[data-status="WAITING"]::before { content: "○"; }   
+td[data-status="CALLED"]::before  { content: "●"; }      
+td[data-status="COMPLETED"]::before { content: "✓"; }
+
+/* Tombol di dalam baris tabel lebih kecil daripada tombol utama. */
+td form {
+    margin: 0;
+}
+
+td button {
+    padding: var(--ruang-1) var(--ruang-3);
+    min-height: 2.25rem;
+    font-size: var(--teks-kecil);
+    white-space: nowrap;
+}
+
+/* Ringkasan hari ini memakai tata letak dl yang sama dengan halaman lain —
+menurun di layar sempit, dua kolom mulai tablet. Angkanya saja yang
+ditebalkan.
+Percobaan pertama membuat istilah dan nilainya berjajar bebas dengan
+flex-basis: auto. Di layar 390px hasilnya justru berhimpitan sehingga
+sulit dilihat pasangan mana milik mana. */
+
+section[aria-labelledby="judul-ringkasan"] dd {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}

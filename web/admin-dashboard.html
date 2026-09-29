@@ -46,9 +46,10 @@
     </section>
      <section id="daftar-antrean" aria-labelledby="judul-daftar">
       <h2 id="judul-daftar">Daftar Antrean</h2>
-      <table>
-        <caption>Antrean hari ini, diurutkan dari yang paling awal dibuat.</caption>
-        <thead>
+      <div class="tabel-gulir" role="region" aria-label="Tabel daftar antrean" tabindex="0">
+        <table>
+          <caption>Antrean hari ini, urut dari yang terawal.</caption>
+          <thead>
           <tr>
             <th scope="col">Nomor</th>
             <th scope="col">Status</th>
@@ -60,15 +61,15 @@
         </thead>
          <tr>
             <th scope="row">A001</th>
-            <td>COMPLETED</td>
-            <td><time datetime="2026-09-03T08:30">08.30</time></td>
-            <td><time datetime="2026-09-03T08:32">08.32</time></td>
-            <td><time datetime="2026-09-03T08:41">08.41</time></td>
-            <td>—</td>
-          </tr>
+              <td data-status="COMPLETED">COMPLETED</td>
+              <td><time datetime="2026-09-03T08:30">08.30</time></td>
+              <td><time datetime="2026-09-03T08:32">08.32</time></td>
+              <td><time datetime="2026-09-03T08:41">08.41</time></td>
+              <td>—</td>
+            </tr>
           <tr>
             <th scope="row">A002</th>
-            <td>COMPLETED</td>
+            <td data-status="COMPLETED">COMPLETED</td>
             <td><time datetime="2026-09-03T08:47">08.47</time></td>
             <td><time datetime="2026-09-03T08:55">08.55</time></td>
             <td><time datetime="2026-09-03T09:06">09.06</time></td>
