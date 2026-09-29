@@ -573,3 +573,15 @@ section[aria-labelledby="judul-daftar"] {
     }
 }
 
+caption {
+    text-align: left;
+    color: var(--warna-teks-lembut);
+    font-size: var(--teks-kecil);
+    margin-bottom: var(--ruang-2);
+/* Caption ikut selebar tabel, sehingga di layar sempit ia tergulir
+keluar bersama kolom-kolom kanan. Dikunci ke tepi kiri area gulir
+agar tetap terbaca tanpa perlu menggulir lebih dulu. */
+    position: sticky;
+    left: 0;
+}
+
