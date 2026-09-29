@@ -385,3 +385,110 @@ section[aria-labelledby="judul-ringkasan"] dd {
     font-weight: 700;
     font-variant-numeric: tabular-nums;
 }
+
+/* =============================================================================
+8. FORM DAN KEADAANNYA
+========================================================================== */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+legend {
+    padding: 0;
+    font-weight: 700;
+    font-size: var(--teks-sedang);
+    margin-bottom: var(--ruang-3);
+}
+
+
+form p + p {
+    margin-top: var(--ruang-3);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--ruang-1);
+}
+input {
+    display: block;
+    width: 100%;
+    max-width: 24rem;
+    min-height: 2.75rem;
+    padding: var(--ruang-2) var(--ruang-3);
+    border: 1px solid var(--warna-garis);
+    border-radius: var(--lengkung);
+    background-color: var(--warna-permukaan);
+}
+/* Teks bantuan berada di bawah input dan terhubung lewat aria-describedby
+sejak Minggu 03, jadi tetap terbaca pembaca layar meski tampil kecil. */
+.bantuan {
+    display: block;
+    margin-top: var(--ruang-1);
+    font-size: var(--teks-kecil);
+    color: var(--warna-teks-lembut);
+}
+
+/* Keadaan: fokus ------------------------------------------------------------
+Garis fokus global sudah diatur pada bagian 3. Di sini border input ikut
+menggelap agar batas kolom yang aktif jelas, bukan hanya garis luarnya. */
+input:focus-visible {
+    border-color: var(--warna-utama);
+}
+
+/* Keadaan: galat ------------------------------------------------------------
+:user-invalid hanya menyala setelah pengguna benar-benar berinteraksi
+dengan kolom dan isinya masih tidak sah — berbeda dari :invalid yang
+menyala sejak halaman dimuat dan memerahkan form yang belum disentuh.
+Aturan ini bekerja tanpa satu baris JavaScript, memanfaatkan required
+dan type="email" yang sudah dipasang sejak Minggu 03.
+aria-invalid="true" disiapkan untuk kesalahan dari server pada Minggu 13. */
+input:user-invalid,
+input[aria-invalid="true"] {
+    border-color: #a4262c;
+    border-width: 2px;
+}
+
+/* Warna saja tidak cukup sebagai penanda galat. Latar yang sedikit
+berbeda memberi petunjuk kedua. */
+input:user-invalid {
+    background-color: #fdf5f5;
+}
+
+.pesan-galat {
+    padding: var(--ruang-2) var(--ruang-3);
+    border-left: 4px solid #a4262c;
+    background-color: #fdf5f5;
+    color: #8a1f24;
+    font-weight: 600;
+}
+
+/* Selama kosong, wadah pesan galat tidak menyisakan ruang sama sekali. */
+.pesan-galat:empty {
+    display: none;
+}
+
+/* Keadaan: nonaktif --------------------------------------------------------
+Dipakai mulai Minggu 05, misalnya ketika tombol Ambil Nomor dimatikan
+sesaat setelah ditekan agar tidak terkirim dua kali. */
+button:disabled,
+input:disabled {
+    cursor: not-allowed;
+    background-color: var(--warna-latar);
+    border-color: var(--warna-garis);
+    color: var(--warna-teks-lembut);
+}
+
+button:disabled:hover {
+    background-color: var(--warna-latar);
+}
+
+/* Perpindahan halus pada tombol, dimatikan bagi pengguna yang memang
+meminta pengurangan gerak lewat pengaturan sistemnya. */
+@media (prefers-reduced-motion: no-preference) {
+button {
+    transition: background-color 150ms ease;
+    }
+}
+
