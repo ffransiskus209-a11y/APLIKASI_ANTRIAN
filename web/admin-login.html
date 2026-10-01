@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="id">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,6 +36,8 @@ Sampai saat itu, form belum melakukan apa pun.
       <form action="admin-dashboard.html" method="post">
         <fieldset>
           <legend>Kredensial petugas</legend>
+           <p class="pesan-galat" role="alert"></p>
+
           <p>
             <label for="email">Email</label>
             <input
@@ -43,9 +46,8 @@ Sampai saat itu, form belum melakukan apa pun.
               name="email"
               autocomplete="username"
               required
-              aria-describedby="bantuan-email"
-            />
-            <span id="bantuan-email">Contoh: petugas@queueapp.test</span>
+              aria-describedby="bantuan-email">
+            <span class="bantuan" id="bantuan-email">Contoh: petugas@queueapp.test</span>
           </p>
           <p>
             <label for="password">Password</label>
@@ -69,14 +71,14 @@ role="alert" membuat pembaca layar mengumumkan isinya begitu terisi,
 tanpa memindahkan fokus pengguna.-->
 
       <section aria-labelledby="judul-kesalahan">
-        <h2 id="judul-kesalahan">Pesan Kesalahan</h2>
-        <p role="alert"></p>
+        <h2 id="judul-kesalahan">Tentang Pesan Kesalahan</h2>
         <p>
-          Bila kredensial salah, sistem tidak memberi tahu bagian mana yang
-          keliru. Menyebutkan "email tidak terdaftar" akan memberitahu penyerang
-          bahwa email lainnya terdaftar.
+          Bila kredensial salah, sistem tidak memberi tahu bagian mana yang keliru.
+          Menyebutkan "email tidak terdaftar" akan memberitahu penyerang bahwa email
+          lainnya terdaftar.
         </p>
       </section>
+
     </main>
     <footer>
       <p>
