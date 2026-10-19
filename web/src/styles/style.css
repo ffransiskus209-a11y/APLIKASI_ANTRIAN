@@ -1,0 +1,15 @@
+.lewati {
+  position: absolute;
+  left: var(--ruang-3);
+  top: var(--ruang-3);
+  z-index: 10;
+  padding: var(--ruang-2) var(--ruang-3);
+  background-color: var(--warna-permukaan);
+  border: 2px solid var(--warna-utama);
+  border-radius: var(--lengkung);
+  transform: translateY(-200%);
+}
+
+.lewati:focus {
+  transform: translateY(0);
+}
