@@ -1,0 +1,8 @@
+- [x] **Minggu 01**: Inisialisasi Repositori & Struktur Dasar
+- [x] **Minggu 02**: Desain Antarmuka & Tata Letak Dasar (HTML/CSS)
+- [x] **Minggu 03**: Logika Pengelolaan Antrean Sisi Klien (Python / Script Dasar)
+- [x] **Minggu 04**: Kontainerisasi Docker Compose & Web Server Nginx
+- [x] **Minggu 05**: Penyempurnaan Status Antrean & State Management Lokal
+- [x] **Minggu 06**: Migrasi ke Frontend Modern (React + Vite)
+- [x] **Minggu 07**: Integrasi Routing Sisi Klien & Lapisan Data Mock
+- [x] **Minggu 08**: Checkpoint UTS / Web MVP (Perbaikan FR-06 & Validasi Alur)
